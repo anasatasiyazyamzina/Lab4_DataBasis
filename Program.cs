@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Lab4
 {
@@ -21,13 +21,14 @@ namespace Lab4
 
     /// <summary>
     /// Конструктор класса Table
-    /// <param name="rows">Строки и столбцы информации</param>
-    /// <param name="GetRows">Метод, отвечающий за измененние данных в таблице</param>
-    /// <param name="GetInformation">Метод, позволяющий выводить информацию из таблицы</param>
-    /// <param name="AlterInformation">Метод, позволяющий изменить информацию из таблицы</param>
-    /// <param name="DeleteInformation">Метод, позволяющий удалить информацию из таблицы</param>
+    /// <param name="table_name">Имя таблицы</param>
+    /// <param name="key">Ключ таблицы</param>
+    /// <param name="CreateTable">Метод, отвечающий за создание таблицы</param>
+    /// <param name="DeleteTable">Метод, позволяющий удалить таблицу</param>
+    /// <param name="AlterTable">Метод, позволяющий изменить таблицу</param>
+    /// <param name="ShowInformation">Метод, вывести информацию из таблицы</param>
     /// </summary>
-    /// <remarks>Класс отвечает за информацию в таблице</remarks>
+    /// <remarks>Класс отвечает действия с таблицами</remarks>
     public class Table
     {
         public string table_name;
@@ -88,6 +89,14 @@ namespace Lab4
             return new_t;
         }
     }
+    /// <summary>
+    /// Конструктор класса References
+    /// <param name="reference">Таблица, на которую будет ссылаться исходная таблица</param>
+    /// <param name="CreateReference">Метод, отвечающий за создание ссылки</param>
+    /// <param name="Delete_Reference">Метод, позволяющий удалить ссылку</param>
+    /// <param name="AlterReference">Метод, позволяющий изменить ссылку</param>
+    /// </summary>
+    /// <remarks>Класс отвечает действия с таблицами, имеющими зависимости и ссылки на другие таблицы</remarks>
 
     class Referenses : Table
     {
@@ -106,8 +115,9 @@ namespace Lab4
     /// <summary>
     /// Точка входа для приложения.
     /// </summary>
-    /// <param name="args"> Список аргументов командной строки</param>
     /// <param name="tab">Переменная для создания таблицы</param>
+    /// <param name="NewDB">Метод для тестирования написанных классов</param>
+    /// <param name="Test_M">Метод для тестирования написанных классов</param>
     class Program {
         public static void Main() {
             
